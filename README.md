@@ -12,6 +12,8 @@ MIT
 
 ## Usage
 
+Copy `config.inc.example.php` to `config.inc.php` And Modify it with your config.
+
 ### basic
 
 `http://example.com/my-u2-rss/?key=[key]`
