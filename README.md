@@ -12,7 +12,9 @@ MIT
 
 ## Usage
 
-Copy `config.inc.example.php` to `config.inc.php` And Modify it with your config.
+1. Copy `config.inc.example.php` to `config.inc.php`
+
+2. Modify `config.inc.php` with your config.
 
 ### basic
 
