@@ -104,7 +104,7 @@ function getTorrentList()
 function applyFilters($torrents)
 {
   global $config;
-  
+
   $f = isset($_GET['filters']) ? $_GET['filters'] : 'normal';
   if (!isset($config['filters'][$f])) {
     return [];
@@ -129,7 +129,7 @@ function applyFilters($torrents)
       for ($i = 0; $i < count($cats); $i++) {
         if (isset($promo[$cats[$i]])) {
           $curpro = $promo[$cats[$i]];
-          if (preg_match('/[0-9\.]/', $curpro, $matches, PREG_OFFSET_CAPTURE)) {
+          if (preg_match('/[0-9\.]+/', $curpro, $matches, PREG_OFFSET_CAPTURE)) {
 
             $op = trim(substr($curpro, 0, $matches[0][1]));
             $val = floatval($matches[0][0]);
@@ -156,6 +156,8 @@ function applyFilters($torrents)
               $r = ($t_val != $val);
               break;
             }
+
+            //echo $cats[$i] . ' ' . $t_val . ' ' . $op . ' ' . $val . ' ' . $r . "\n";
 
             if (!$r) {
               break;
