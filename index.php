@@ -88,7 +88,7 @@ function getTorrentList()
   }
 
   $torrents = [];
-  preg_match_all('/<tr>([\s\S]*?<a href="viewsnatches\.php.*?<\/td>.*?)<\/tr>/', $html, $mat);
+  preg_match_all('/<tr>([\s\S]*?<\/table>.*?)<\/tr>/', $html, $mat);
 
   for ($i = 0; $i < count($mat[0]); $i++) {
     //$mat[0][$i] = $mat[1][$i];
