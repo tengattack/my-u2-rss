@@ -11,7 +11,7 @@ function getTorrentInfo($torrenthtml)
     return;
   }
 
-  if (!preg_match('/<td class="rowfollow nowrap"><span title="(.*?)"/i', $torrenthtml, $mat2)) {
+  if (!preg_match('/<td class="rowfollow nowrap"><(span|time) title="(.*?)"/i', $torrenthtml, $mat2)) {
     return;
   }
 
@@ -20,7 +20,7 @@ function getTorrentInfo($torrenthtml)
     return;
   }
 
-  $timestamp = strtotime($mat2[1]);
+  $timestamp = strtotime($mat2[2]);
 
   $torrent = [
     'id' => $matches[1],
